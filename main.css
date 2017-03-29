@@ -1,0 +1,31 @@
+form {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	background: grey;
+	padding: 20px;
+}
+li {
+	padding: 5px;
+}
+li:nth-child(even) {
+	background: grey;
+	color: white;
+}
+#text_box {
+	float: left;
+	width: 40%;
+	height: 30px;
+	border: none;
+	margin-left: 10px;
+}
+#nama_user {
+	float: left;
+	width: 20%;
+	height: 30px;
+	border: none;
+button {
+	float: left;
+	width: 20%;
+	height: 33px;
+}

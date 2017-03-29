@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Socket IO Node JS</title>
+	<link rel="stylesheet" type="text/css" href="/main.js">
+</head>
+<body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+
+	<ul id="messages"></ul>
+	<form>
+		<input type="text" id="nama_user" placeholder="username">
+		<input type="text" id="text_box" placeholder="Type chat">
+		<button> Kirim </button>
+	</form>
+	<script type="text/javascript">
+		var username = '';
+		var socket = io();
+
+		$('form').submit(function(){
+			username = $('#nama_user').val();
+			socket.emit('newMessage', username + ' ' + $('#text_box').val());
+			$('#text_box').val('');
+			return false;
+		});
+
+		//untuk menampilkan chat
+		socket.on('newMessage', function(msg) {
+			$('#messages').append($('<li>').text(msg + ' ' + Date()));
+		});
+	</script>
+</body>
+</html>
